@@ -1,0 +1,10 @@
+Logs filter=lfs diff=lfs merge=lfs -text
+Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.csproj filter=lfs diff=lfs merge=lfs -text
+Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj filter=lfs diff=lfs merge=lfs -text
+UserSettings filter=lfs diff=lfs merge=lfs -text
+El[[:space:]]VR[[:space:]]Game.sln filter=lfs diff=lfs merge=lfs -text
+Library filter=lfs diff=lfs merge=lfs -text
+ProjectSettings filter=lfs diff=lfs merge=lfs -text
+Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj filter=lfs diff=lfs merge=lfs -text
+Assets filter=lfs diff=lfs merge=lfs -text
+Packages filter=lfs diff=lfs merge=lfs -text
