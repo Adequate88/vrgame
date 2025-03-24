@@ -75,5 +75,8 @@ crashlytics-build.properties
 
 # Any other assets that are too big and we don't need
 */Abandoned_Asylum
+/[Aa]ssets/[Ss]amples/*
+# Other stuff related to idea
+.idea/*
 
 Packages/*
