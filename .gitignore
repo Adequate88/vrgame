@@ -123,7 +123,12 @@ crashlytics-build.properties
 
 # Optional: ignore huge sample assets or unused folders
 */Abandoned_Asylum/
-Assets/Samples/*
+# Ignore all assets (optional, for lean repos)
+Assets/*
+!Assets/Kitchen Scene/
+!Assets/Kitchen Scene/*.unity
+!Assets/Kitchen Scene/*.meta
+
 
 # Packages (keep only critical package files)
 Packages/*
