@@ -11,13 +11,21 @@ public class PotStirManager : MonoBehaviour
 
     [Header("Stirring Settings")]
     public string spoonTag = "Spoon";
-    public float stirDuration = 2f; // how long you need to stir to complete
+    public GameObject spoon;
+
 
     private bool spoonInZone = false;
     private bool isPotHeld = false;
     private bool isStirringComplete = false;
 
-    private float stirTimer = 0f;
+    
+    // Movement of Spoon so that it is stirring inside the thing
+    private Vector3 lastSpoonPosition;
+    private float stirProgress = 0f;
+
+    public float requiredStirDistance = 5f;   // Total movement needed to complete stirring
+    public float movementThreshold = 0.01f;   // Minimum movement to be considered as stirring
+
     
     
     private void OnTriggerEnter(Collider other)
@@ -25,7 +33,7 @@ public class PotStirManager : MonoBehaviour
         if (other.CompareTag(spoonTag))
         {
             spoonInZone = true;
-            stirTimer = 0f; // Reset if they enter again
+            lastSpoonPosition = other.transform.position;
         }
     }
 
@@ -34,7 +42,6 @@ public class PotStirManager : MonoBehaviour
         if (other.CompareTag(spoonTag))
         {
             spoonInZone = false;
-            stirTimer = 0f;
         }
     }
     
@@ -58,7 +65,6 @@ public class PotStirManager : MonoBehaviour
     void OnPotReleased(SelectExitEventArgs args)
     {
         isPotHeld = false;
-        stirTimer = 0f;
     }
     
     void Update()
@@ -67,9 +73,17 @@ public class PotStirManager : MonoBehaviour
 
         if (isPotHeld && spoonInZone)
         {
-            stirTimer += Time.deltaTime;
+            Vector3 currentSpoonPosition = spoon.transform.position;
+            float movement = Vector3.Distance(currentSpoonPosition, lastSpoonPosition);
 
-            if (stirTimer >= stirDuration)
+            if (movement > movementThreshold)
+            {
+                stirProgress += movement;   // Add actual movement distance
+            }
+
+            lastSpoonPosition = currentSpoonPosition;
+
+            if (stirProgress >= requiredStirDistance)
             {
                 CompleteStirring();
             }
@@ -78,7 +92,6 @@ public class PotStirManager : MonoBehaviour
     void CompleteStirring()
     {
         isStirringComplete = true;
-        stirTimer = 0f;
 
         if (ingredientCollector != null)
         {

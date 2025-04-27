@@ -9,6 +9,8 @@ TagManager:
   - Cheese
   - batterCake
   - Spoon
+  - OvenInside
+  - Pot
   layers:
   - Default
   - TransparentFX
