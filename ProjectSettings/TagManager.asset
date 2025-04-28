@@ -2,8 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - RedDuck
+  - YellowDuck
+  - CyanDuck
+  - PurpleDuck
+  - RedSocket
+  - YellowSocket
+  - CyanSocket
+  - PurpleSocket
   layers:
   - Default
   - TransparentFX
@@ -21,7 +29,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Post-Processing
   - 
   - 
   - 
@@ -41,3 +49,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default

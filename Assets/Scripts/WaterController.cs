@@ -8,6 +8,8 @@ public class WaterController : MonoBehaviour
     // Reference to a GameObject
     public GameObject roof;
     public GameObject floor;
+    
+    public PuzzleController puzzleController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +22,7 @@ public class WaterController : MonoBehaviour
     void Update()
     {
         // Increase the y position of the object if it is below the maximum water level
-        if (transform.position.y < roof.transform.position.y) {
+        if (transform.position.y < roof.transform.position.y && puzzleController.puzzleComplete) {
             transform.position += new Vector3(0, waterVelocity * Time.deltaTime, 0);
         }
     }

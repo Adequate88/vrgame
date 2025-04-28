@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bathroom_flooded.unity
+    guid: 78c00eaff3e7250e8bc8c9f17db2578d
+  - enabled: 1
+    path: Assets/Scenes/Temporary.unity
+    guid: 811e2b1239510daab9f1dc704780a1b2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7d53b9b8f71969ee58b1c95b8b817d8e, type: 2}
