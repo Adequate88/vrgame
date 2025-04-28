@@ -72,14 +72,14 @@ crashlytics-build.properties
 # Optional: ignore huge sample assets or unused folders
 */Abandoned_Asylum/
 # Ignore all assets (optional, for lean repos)
-Assets/Alstrainfinite*
-Assets/CrowAssets*
-Assets/Food Pack-Demo*
-Assets/Free Wood Door Pack*
-Assets/HomeStuff*
-Assets/Kabungus*
-Assets/Samples*
-Assets/Low_poly_Kitchen*
+# Assets/Alstrainfinite*
+# Assets/CrowAssets*
+# Assets/Food Pack-Demo*
+# Assets/Free Wood Door Pack*
+# Assets/HomeStuff*
+# Assets/Kabungus*
+# Assets/Samples*
+# Assets/Low_poly_Kitchen*
 # !Assets/Kitchen Scene/
 # !Assets/Kitchen Scene/*.unity
 # !Assets/Kitchen Scene/*.meta
