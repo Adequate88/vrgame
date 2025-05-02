@@ -11,6 +11,7 @@ TagManager:
   - Spoon
   - OvenInside
   - Pot
+  - SafeZone
   layers:
   - Default
   - TransparentFX
