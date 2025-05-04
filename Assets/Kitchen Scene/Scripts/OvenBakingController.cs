@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Basically, here we're supposed to start the cooking process when you put the cake inside and turn the knob
+/// </summary>
 public class OvenBakingController : MonoBehaviour
 {
     [Header("References")]
