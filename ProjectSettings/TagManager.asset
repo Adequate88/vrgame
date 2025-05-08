@@ -12,6 +12,8 @@ TagManager:
   - YellowSocket
   - CyanSocket
   - PurpleSocket
+  - Sockets
+  - Candles
   layers:
   - Default
   - TransparentFX
