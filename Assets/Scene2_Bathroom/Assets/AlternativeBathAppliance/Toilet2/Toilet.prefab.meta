@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 236d9134e845d1c4db1c3cbcfc0638b7
+timeCreated: 1471470382
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 69129
+  packageName: Simple Home Stuff
+  packageVersion: 1.0
+  assetPath: Assets/HomeStuff/Prefabs/Toilet.prefab
+  uploadId: 132877
