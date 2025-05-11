@@ -40,7 +40,7 @@ public class PuzzleController : MonoBehaviour
             {
                 Transform child = candleParent.transform.GetChild(i);
                 flameParticleSystems[i] = child.GetChild(0).GetChild(0).GetComponent<ParticleSystem>();
-                candleLights[i] = child.GetChild(5).GetComponent<Light>();
+                candleLights[i] = child.GetChild(4).GetComponent<Light>();
 
             }
             

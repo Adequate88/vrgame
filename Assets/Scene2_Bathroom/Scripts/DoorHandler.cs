@@ -17,7 +17,7 @@ public class DoorHandler : MonoBehaviour
     {
         if (puzzleController.puzzleComplete && transform.position.x > 4.0f)
         {
-            GoToScene("Temporary");
+            GoToScene("AtticRoom");
         }
     }
 

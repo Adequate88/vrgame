@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+
 public class FadeScreen : MonoBehaviour
 {
     [SerializeField] private bool fadeOnStart = true;
@@ -8,10 +8,13 @@ public class FadeScreen : MonoBehaviour
     [SerializeField] private Color fadeColor;
 
     private Renderer rend;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private MaterialPropertyBlock propertyBlock;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
+        propertyBlock = new MaterialPropertyBlock();
+
         if (fadeOnStart)
         {
             FadeIn();
@@ -20,12 +23,12 @@ public class FadeScreen : MonoBehaviour
 
     public void FadeIn()
     {
-        Fade(1, 0);
+        Fade(1.0f, 0.0f); // Alpha from 1 (opaque) to 0 (transparent)
     }
-    
+
     public void FadeOut()
     {
-        Fade(0, 1);
+        Fade(0.0f, 1.0f); // Alpha from 0 (transparent) to 1 (opaque)
     }
 
     public void Fade(float alphaIn, float alphaOut)
@@ -33,30 +36,26 @@ public class FadeScreen : MonoBehaviour
         StartCoroutine(FadeRoutine(alphaIn, alphaOut));
     }
 
-    public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
+    private IEnumerator FadeRoutine(float alphaIn, float alphaOut)
     {
         float timer = 0;
         while (timer < fadeDuration)
         {
-            Color newColor = fadeColor;
-            newColor.a = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
-            
-            rend.material.SetColor("_Color", newColor);
-            
+            float alpha = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
+            UpdateMaterialAlpha(alpha);
+
             timer += Time.deltaTime;
             yield return null;
         }
-        
-        Color newColor2 = fadeColor;
-        newColor2.a = alphaOut;
-            
-        rend.material.SetColor("_Color", newColor2);
 
+        UpdateMaterialAlpha(alphaOut);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateMaterialAlpha(float alpha)
     {
-        
+        fadeColor.a = alpha;
+        rend.GetPropertyBlock(propertyBlock);
+        propertyBlock.SetColor("_BaseColor", fadeColor); // Use "_BaseColor" for URP shaders
+        rend.SetPropertyBlock(propertyBlock);
     }
 }
