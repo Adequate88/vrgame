@@ -36,7 +36,7 @@ public class HideController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("Player in Range");
+            Debug.Log("🙈 Player in Hiding Range");
         }
     }
 
@@ -46,31 +46,16 @@ public class HideController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            Debug.Log("Player Exited Range");
+            Debug.Log("🐵 Player Exited Hiding Range");
         }
     }
 
-    // Listen for input when the player is in range.
+    // Check for Hiding Gesture when nothing is processing and Player is in Range.
     private void Update()
     {
-        // Always check R key input regardless of other conditions
-        if (!isProcessing)
+        if (!isProcessing && playerInRange)
         {
-            // R key handling for hiding/unhiding
-            if (!isHidden && playerInRange)
-            {
-                StartCoroutine(HideInSequence());
-            }
-            else if (isHidden)
-            {
-                StartCoroutine(HideOutSequence());
-            }
-            
-            // Check for peek-a-boo gesture (both controllers near face)
-            if (playerInRange)
-            {
             CheckHidingGesture();
-            }
         }
     }
 
@@ -82,16 +67,16 @@ public class HideController : MonoBehaviour
             float leftDistance = Vector3.Distance(leftControllerTransform.position, headTransform.position);
             float rightDistance = Vector3.Distance(rightControllerTransform.position, headTransform.position);
             
-            Debug.Log($"camera/head: {headTransform.position} right: {rightControllerTransform.position} left: {leftControllerTransform.position}");
+            // Debug.Log($"camera/head: {headTransform.position} right: {rightControllerTransform.position} left: {leftControllerTransform.position}");
             
             // Check if both controllers are close enough to the head
             bool hideGestureDetected = (leftDistance < hideGestureThreshold && rightDistance < hideGestureThreshold);
-            Debug.Log($"Left Distance: {leftDistance} Right Distance: {rightDistance}");
+            // Debug.Log($"Left Distance: {leftDistance} Right Distance: {rightDistance}");
 
 
             if (hideGestureDetected)
             {
-                Debug.Log("Hide Gesture detected!!!");
+                // Debug.Log("Hide Gesture detected!!!");
             }
 
             // Handle the dynamic hiding behavior
@@ -143,8 +128,8 @@ public class HideController : MonoBehaviour
         // Bildschirm bleibt schwarz (kein Fade zurück)
         isHidden = true;
         isProcessing = false;
-        Debug.Log("Hide Sequence done");
-        Debug.Log($"HIDE: Target pos: {hiddenPosition.position}, XR Origin is at: {xrOrigin.position}");
+        // Debug.Log("Hide Sequence done");
+        // Debug.Log($"HIDE: Target pos: {hiddenPosition.position}, XR Origin is at: {xrOrigin.position}");
     }
 
     // Sequence for coming out of hiding.
@@ -178,7 +163,7 @@ public class HideController : MonoBehaviour
         
         isHidden = false;
         isProcessing = false;
-        Debug.Log("Hide OUT Sequence done");
-        Debug.Log($"EXIT: Target pos: {exitPosition.position}, XR Origin is at: {xrOrigin.position}");
+        // Debug.Log("Hide OUT Sequence done");
+        // Debug.Log($"EXIT: Target pos: {exitPosition.position}, XR Origin is at: {xrOrigin.position}");
     }
 }

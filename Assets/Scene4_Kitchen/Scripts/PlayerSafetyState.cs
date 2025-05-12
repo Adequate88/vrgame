@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerSafetyState : MonoBehaviour
 {
-    public bool isSafe = false;
+    public static bool isSafe = false;
 
     void OnTriggerEnter(Collider other)
     {
