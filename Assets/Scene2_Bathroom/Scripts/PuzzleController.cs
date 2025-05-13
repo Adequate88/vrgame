@@ -19,7 +19,7 @@ public class PuzzleController : MonoBehaviour
     private Color[] colors = {Color.red, Color.magenta, Color.yellow, Color.cyan};
     private Color originalColor;
     private bool isRunning = true; // To control the coroutine
-
+    private bool stopExpansion = false;
     void Start()
         {
             puzzleComplete = false;
@@ -55,6 +55,14 @@ public class PuzzleController : MonoBehaviour
         if (puzzleComplete)
         {
             HandleCorrectPlacement();
+
+            if (stopExpansion)
+            {
+
+
+
+            }
+
         }
     }
     
@@ -65,7 +73,7 @@ public class PuzzleController : MonoBehaviour
         if (correctPlacements >= 4) // All ducks placed
         {
             puzzleComplete = true;
-            Debug.Log("Puzzle Complete!");
+            //Debug.Log("Puzzle Complete!");
             
             StopColorChange();
             
