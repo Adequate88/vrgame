@@ -19,7 +19,7 @@ public class WaterController : MonoBehaviour
         // Set the initial position of the object
         transform.position = floor.transform.position;
         cam = Camera.main;
-        
+        underWaterProfile.SetActive(false);
     }
 
     // Update is called once per frame

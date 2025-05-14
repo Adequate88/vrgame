@@ -28,16 +28,16 @@ public class FadeController : MonoBehaviour
         {
             // Fade out (from black to clear)
             StartCoroutine(Fade(1, 0));
-            Debug.Log($"if: {isFaded}");
+            // Debug.Log($"if: {isFaded}");
         }
         else
         {
             // Fade in (from clear to black)
             StartCoroutine(Fade(0, 1));
-            Debug.Log($"else: {isFaded}");
+            // Debug.Log($"else: {isFaded}");
         }
         isFaded = !isFaded;
-        Debug.Log($"last: {isFaded}");
+        // Debug.Log($"last: {isFaded}");
     }
 
     private IEnumerator Fade(float startAlpha, float endAlpha)

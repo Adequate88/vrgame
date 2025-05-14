@@ -8,7 +8,7 @@ public class PursuerSequence : MonoBehaviour
 {
     // Initializes everything
     public GameObject player; // Attach to the XR origin
-    private PlayerSafetyState safetyState; // This is the state that says hey, we haven't lost yet
+    //private PlayerSafetyState safetyState; // This is the state that says hey, we haven't lost yet
 
     public AudioSource audioSource; // This one is attached to the Monster
     public AudioClip footstepClip; // This one can be anything, based on the material of your room
@@ -37,16 +37,18 @@ public class PursuerSequence : MonoBehaviour
     public bool sequenceMonsterInsideRoomActive = false; // This one here is so we can add other scripts to run when the Monster is in the room (e.g. dimming the lights, etc)
 
 
-    private bool sequenceStarted = false;
+    // private bool sequenceStarted = false; //unused
 
     void Start()
     {
-        
         originalPosition = monsterTransform.position;
         StartCoroutine(StartPursuerSequence());
-        safetyState = player.GetComponent<PlayerSafetyState>();
-        
+        //safetyState = player.GetComponent<PlayerSafetyState>();
 
+        //if (safetyState == null)
+        //{
+            //Debug.LogError("PlayerSafetyState component not found on player object. Make sure it's attached to the player (XR Origin)!");
+        //}   
     }
 
     IEnumerator StartPursuerSequence()
@@ -73,7 +75,7 @@ public class PursuerSequence : MonoBehaviour
             yield return new WaitForSeconds(timeAfterKnockingToCheck);
             audioSource.Stop();
         
-            // Door opens, check if player saf
+            // Door opens, check if player safe
             audioSource.PlayOneShot(doorOpenClip);
             yield return new WaitForSeconds(3f);
             CheckIfPlayerIsSafe();
@@ -132,9 +134,9 @@ public class PursuerSequence : MonoBehaviour
 
     void CheckIfPlayerIsSafe()
     {
-        if (safetyState != null && safetyState.isSafe)
+        if (PlayerSafetyState.isSafe)
         {
-            Debug.Log("😌 Player is safe. You survived... for now.");
+            Debug.Log("😌 Player is safe while Monster is in room.");
             StartCoroutine(SafeSequence());
         }
         else
@@ -165,7 +167,7 @@ public class PursuerSequence : MonoBehaviour
         while (timer < totalDuration)
         {
             // Check player's safety during the sequence
-            if (safetyState == null || !safetyState.isSafe)
+            if (!PlayerSafetyState.isSafe)
             {
                 
                 Debug.Log("💀 Player left the safe zone during the safe sequence. Game Over.");
@@ -182,7 +184,7 @@ public class PursuerSequence : MonoBehaviour
                 audioSource.Stop();
                 audioSource.PlayOneShot(doorOpenClip);
                 playingDoorSound = true;
-                Debug.Log("Opening Door sound, monster leaving");
+                Debug.Log("🔊 Opening Door sound, monster leaving");
 
             }
 
