@@ -4907,7 +4907,8 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1840428111292734970, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5723099618730811762, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       insertIndex: -1
@@ -8641,7 +8642,7 @@ MonoBehaviour:
   hiddenPosition: {fileID: 2098049706}
   exitPosition: {fileID: 340656196}
   xrOrigin: {fileID: 1147874002}
-  fadeController: {fileID: 432211391}
+  fadeScreen: {fileID: 2103719848}
   fadeWaitTime: 1
   teleportationProvider: {fileID: 1147874006}
   breathingAudio: {fileID: 1689243128}
