@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+
 /// <summary>
 /// Gonna try to comment on everything so you guys can see what the code here does, it's a bit
 /// of a mess but it works and it's modular
@@ -8,6 +9,7 @@ public class PursuerSequence : MonoBehaviour
 {
     // Initializes everything
     public GameObject player; // Attach to the XR origin
+    public GameOverMenu gameOverMenu;
     //private PlayerSafetyState safetyState; // This is the state that says hey, we haven't lost yet
 
     public AudioSource audioSource; // This one is attached to the Monster
@@ -141,6 +143,7 @@ public class PursuerSequence : MonoBehaviour
         }
         else
         {
+            gameOverMenu.ShowGameOverMenu();
             Debug.Log("💀 You were caught. Game Over.");
             // Trigger death sequence here
         }
@@ -171,7 +174,7 @@ public class PursuerSequence : MonoBehaviour
             {
                 
                 Debug.Log("💀 Player left the safe zone during the safe sequence. Game Over.");
-                // TODO: Trigger A losing sequence here or something
+                gameOverMenu.ShowGameOverMenu();
                 sequenceMonsterInsideRoomActive = false;
                 yield break; // Exit coroutine immediately
             }
