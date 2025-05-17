@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ae8e296221308094890752a875995dff
+timeCreated: 1470618330
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 69129
+  packageName: Simple Home Stuff
+  packageVersion: 1.0
+  assetPath: Assets/HomeStuff/Materials/Ground.mat
+  uploadId: 132877

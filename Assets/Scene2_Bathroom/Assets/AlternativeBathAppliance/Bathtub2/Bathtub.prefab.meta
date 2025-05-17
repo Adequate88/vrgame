@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 269e5f66b4550e144928170a0e6c8913
+timeCreated: 1471470406
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 69129
+  packageName: Simple Home Stuff
+  packageVersion: 1.0
+  assetPath: Assets/HomeStuff/Prefabs/Bathtub.prefab
+  uploadId: 132877
