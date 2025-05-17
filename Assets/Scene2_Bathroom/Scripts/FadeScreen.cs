@@ -7,6 +7,7 @@ public class FadeScreen : MonoBehaviour
     [SerializeField] public float fadeDuration = 1.0f;
     [SerializeField] private Color fadeColor;
 
+    private bool isActive = true;
     private Renderer rend;
     private MaterialPropertyBlock propertyBlock;
 
@@ -23,12 +24,19 @@ public class FadeScreen : MonoBehaviour
 
     public void FadeIn()
     {
-        Fade(1.0f, 0.0f); // Alpha from 1 (opaque) to 0 (transparent)
+        StartCoroutine(FadeInRoutine());
+    }
+
+    private IEnumerator FadeInRoutine()
+    {
+        yield return FadeRoutine(1.0f, 0.0f); // Alpha from 1 (opaque) to 0 (transparent)
+        gameObject.SetActive(false);
     }
 
     public void FadeOut()
     {
-        Fade(0.0f, 1.0f); // Alpha from 0 (transparent) to 1 (opaque)
+        gameObject.SetActive(true);
+        StartCoroutine(FadeRoutine(0.0f, 1.0f)); // Alpha from 0 (transparent) to 1 (opaque)
     }
 
     public void Fade(float alphaIn, float alphaOut)

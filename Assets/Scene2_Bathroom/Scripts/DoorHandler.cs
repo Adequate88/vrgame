@@ -7,29 +7,49 @@ public class DoorHandler : MonoBehaviour
     public FadeScreen fadeScreen;
     public PuzzleController puzzleController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool doorOpened = false;
+
     void Start()
     {
-        
+        doorOpened = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (puzzleController.puzzleComplete && transform.position.x > 4.0f)
+       
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if the puzzle is complete and the door is opened
+        if (puzzleController.puzzleComplete && other.CompareTag("DoorTrigger") && !doorOpened)
         {
-            GoToScene("AtticRoom");
+            doorOpened = true; // Prevent multiple triggers
+            GoToNextScene();
         }
     }
 
-    public void GoToScene(string sceneName)
+    public void GoToNextScene()
     {
-        StartCoroutine(GoToSceneRoutine(sceneName));
+        StartCoroutine(GoToNextSceneRoutine());
     }
-    IEnumerator GoToSceneRoutine(string sceneName)
+    private IEnumerator GoToNextSceneRoutine()
     {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
-        SceneManager.LoadScene(sceneName);
-        
+
+        // Get the current scene index and load the next scene
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Check if the next scene index is within bounds
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.LogWarning("No next scene available. End of build settings.");
+        }
     }
 }

@@ -10,8 +10,8 @@ public class HideController : MonoBehaviour
     public Transform hiddenPosition; // Where the player teleports when hiding.
     public Transform exitPosition; // Where the player appears when coming out.
     public Transform xrOrigin; // Das XR Origin/XR Rig (enthält die Kamera und den Player)
-    public FadeController fadeController; // Reference to the script that handles fade in/out.
-    public float fadeWaitTime = 1f; // Time to wait for the fade effect (should match fadeDuration in FadeController).
+    public FadeScreen fadeScreen; // Reference to the script that handles fade in/out.
+    public float fadeWaitTime = 1f; // Time to wait for the fade effect (should match fadeDuration in fadeScreen).
     public UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationProvider teleportationProvider; // XR Interaction Toolkit teleportation provider
     public AudioSource breathingAudio;
     public AudioSource closetAudio;
@@ -102,7 +102,7 @@ public class HideController : MonoBehaviour
         closetAudio.Play();
 
         // Fade to black.
-        fadeController.ToggleFade(); // This fades from clear to black
+        fadeScreen.FadeIn(); // This fades from clear to black
 
         // wait 1 second
         yield return new WaitForSeconds(fadeWaitTime);
@@ -158,7 +158,7 @@ public class HideController : MonoBehaviour
         yield return new WaitForFixedUpdate();
 
         // Fade from black to clear.
-        fadeController.ToggleFade(); // This fades from black to clear.
+        fadeScreen.FadeOut(); // This fades from black to clear.
         yield return new WaitForFixedUpdate();
         
         isHidden = false;

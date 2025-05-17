@@ -17,7 +17,7 @@ public class WaterController : MonoBehaviour
     void Start()
     {
         // Set the initial position of the object
-        transform.position = floor.transform.position;
+        transform.position = floor.transform.position - 0.5f * Vector3.up;
         cam = Camera.main;
         underWaterProfile.SetActive(false);
     }
