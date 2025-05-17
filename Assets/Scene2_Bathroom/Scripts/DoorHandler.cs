@@ -25,19 +25,31 @@ public class DoorHandler : MonoBehaviour
         if (puzzleController.puzzleComplete && other.CompareTag("DoorTrigger") && !doorOpened)
         {
             doorOpened = true; // Prevent multiple triggers
-            GoToScene("AtticRoom");
+            GoToNextScene();
         }
     }
 
-    public void GoToScene(string sceneName)
+    public void GoToNextScene()
     {
-        StartCoroutine(GoToSceneRoutine(sceneName));
+        StartCoroutine(GoToNextSceneRoutine());
     }
-    IEnumerator GoToSceneRoutine(string sceneName)
+    private IEnumerator GoToNextSceneRoutine()
     {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
-        SceneManager.LoadScene(sceneName);
-        
+
+        // Get the current scene index and load the next scene
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Check if the next scene index is within bounds
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.LogWarning("No next scene available. End of build settings.");
+        }
     }
 }
