@@ -12,6 +12,17 @@ TagManager:
   - OvenInside
   - Pot
   - SafeZone
+  - PurpleSocket
+  - CyanSocket
+  - Candles
+  - YellowSocket
+  - Sockets
+  - RedSocket
+  - CyanDuck
+  - YellowDuck
+  - PurpleDuck
+  - RedDuck
+  - DoorTrigger
   layers:
   - Default
   - TransparentFX

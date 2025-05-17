@@ -7,16 +7,24 @@ public class DoorHandler : MonoBehaviour
     public FadeScreen fadeScreen;
     public PuzzleController puzzleController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool doorOpened = false;
+
     void Start()
     {
-        
+        doorOpened = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (puzzleController.puzzleComplete && transform.position.x > 4.0f)
+       
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if the puzzle is complete and the door is opened
+        if (puzzleController.puzzleComplete && other.CompareTag("DoorTrigger") && !doorOpened)
         {
+            doorOpened = true; // Prevent multiple triggers
             GoToScene("AtticRoom");
         }
     }
