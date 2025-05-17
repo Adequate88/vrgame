@@ -24,6 +24,10 @@ public class FadeScreen : MonoBehaviour
 
     public void FadeIn()
     {
+        if (!gameObject.activeSelf)
+        {
+            gameObject.SetActive(true);
+        }
         StartCoroutine(FadeInRoutine());
     }
 

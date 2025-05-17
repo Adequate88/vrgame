@@ -28,6 +28,7 @@ public class HideController : MonoBehaviour
     
     private List<InputDevice> controllers = new List<InputDevice>(); // List to store controllers
 
+  
 
     // Called when a collider enters the trigger area.
     private void OnTriggerEnter(Collider other)
@@ -57,6 +58,9 @@ public class HideController : MonoBehaviour
         {
             CheckHidingGesture();
         }
+        
+        
+
     }
 
     private void CheckHidingGesture()
@@ -102,7 +106,7 @@ public class HideController : MonoBehaviour
         closetAudio.Play();
 
         // Fade to black.
-        fadeScreen.FadeIn(); // This fades from clear to black
+        fadeScreen.FadeOut(); // This fades from clear to black
 
         // wait 1 second
         yield return new WaitForSeconds(fadeWaitTime);
@@ -155,10 +159,10 @@ public class HideController : MonoBehaviour
         teleportationProvider.QueueTeleportRequest(teleportRequest);
         
         // Kurze Pause, um sicherzustellen, dass die Teleportation durchgeführt wurde
-        yield return new WaitForFixedUpdate();
+        //yield return new WaitForFixedUpdate();
 
         // Fade from black to clear.
-        fadeScreen.FadeOut(); // This fades from black to clear.
+        fadeScreen.FadeIn(); // This fades from black to clear.
         yield return new WaitForFixedUpdate();
         
         isHidden = false;
