@@ -1,8 +1,11 @@
 using UnityEngine;
 
-public class OpenWithPuzzle : MonoBehaviour
+public class OpenWithPuzzle : PuzzleController
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Inherits from PuzzleController: specifically puzzleCompleted
+
     public GameObject cube1Interactor;
     public GameObject cube6Interactor;
 
@@ -15,7 +18,6 @@ public class OpenWithPuzzle : MonoBehaviour
     int[] correctNotes = { 5, 5, 6, 5, 8, 7 };
 
     // true when all notes in the table are identical to correctNotes
-    public bool puzzleCompleted = false;
 
 
     void Start()
@@ -26,7 +28,7 @@ public class OpenWithPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puzzleCompleted) return;
+        if (puzzleComplete) return;
 
         puzzleIsActive = (cube1Interactor.GetComponent<SocketEvent>().attached & cube6Interactor.GetComponent<SocketEvent>().attached);
 
@@ -57,7 +59,7 @@ public class OpenWithPuzzle : MonoBehaviour
             }
         }
 
-        puzzleCompleted = true;
+        puzzleComplete = true;
         gameObject.GetComponent<Renderer>().material.color = Color.green;
     }
 }
