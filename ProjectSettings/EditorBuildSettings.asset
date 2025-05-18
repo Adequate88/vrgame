@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene4_Kitchen/Kitchen_Room_Scene.unity
     guid: 162a64d64a22ab24a97b92c1b40253be
+  - enabled: 1
+    path: Assets/Scene_5_Final_Room/Final Scene.unity
+    guid: 08f50f9540f0b5b448889b8cfb2baea6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5821562cdb42d1deba3183acc334efaf, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}

@@ -11,26 +11,26 @@ public class KeyInteraction : MonoBehaviour
     
     // Reference to the XR interactable component
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable interactable;
-    
+
     void Start()
     {
         // Get or add the XR Simple Interactable component
         interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
-        if (interactable == null)
+        if (interactable == null) { 
             interactable = gameObject.AddComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable>();
             Debug.Log("Interactable is null, creating interactable...");
-
+        }
             
         // Subscribe to the select event (when user "clicks" on it in VR)
-        interactable.selectEntered.AddListener(OnKeySelected);
+        //interactable.selectEntered.AddListener(OnKeySelected);
     }
-    
+
     // This function is called when the key is clicked/selected
-    private void OnKeySelected(SelectEnterEventArgs args)
+    public void OnKeySelected()
     {
         // Log that the key was selected (for debugging)
         Debug.Log("Key selected! Attempting to play sound...");
-        
+
         // Play the key pickup sound with null check
         if (keyPickupSound != null)
         {
@@ -44,11 +44,12 @@ public class KeyInteraction : MonoBehaviour
 
         // Set the global doorOpen variable to true
         doorOpen = true;
-        
+
         // Log that the key was selected (for debugging)
         Debug.Log("Key selected! Door is now unlocked.");
-        
+
         // Make the key disappear
         gameObject.SetActive(false);
     }
+    
 }
