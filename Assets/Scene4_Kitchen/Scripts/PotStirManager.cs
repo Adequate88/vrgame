@@ -60,7 +60,27 @@ public class PotStirManager : MonoBehaviour
     void OnPotGrabbed(SelectEnterEventArgs args)
     {
         isPotHeld = true;
+
+        // Manually check if the spoon is already inside the stir zone
+        Collider[] overlappingColliders = Physics.OverlapBox(
+            stirZone.bounds.center, 
+            stirZone.bounds.extents, 
+            stirZone.transform.rotation
+        );
+
+        foreach (Collider col in overlappingColliders)
+        {
+            if (col.CompareTag(spoonTag))
+            {
+                spoonInZone = true;
+                spoon = col.gameObject;
+                lastSpoonPosition = spoon.transform.position;
+                break;
+            }
+        }
     }
+
+
 
     void OnPotReleased(SelectExitEventArgs args)
     {
@@ -73,6 +93,7 @@ public class PotStirManager : MonoBehaviour
 
         if (isPotHeld && spoonInZone)
         {
+            
             Vector3 currentSpoonPosition = spoon.transform.position;
             float movement = Vector3.Distance(currentSpoonPosition, lastSpoonPosition);
 
