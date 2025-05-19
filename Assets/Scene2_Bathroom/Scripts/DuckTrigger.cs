@@ -3,7 +3,7 @@ using UnityEngine;
 public class DuckTrigger : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public PuzzleController puzzleController;
+    public PuzzleControllerBathroom puzzleController;
     
     private bool duckNotPlacedYet = false;
     
