@@ -154,8 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleComplete: 0
-  candleOnInterval: 0
-  candleNextInterval: 0
 --- !u!4 &41908519
 Transform:
   m_ObjectHideFlags: 0
@@ -4110,7 +4108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f8ec0f4b7d7af4a82a3fb1e720888f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pot: {fileID: 0}
+  pot: {fileID: 1867058944}
   bundtCake: {fileID: 1006727839}
   knob: {fileID: 739398483}
   ovenDoor: {fileID: 1774356639}
@@ -8918,6 +8916,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2f41eded4ce994897c99e0c751603e, type: 3}
+--- !u!1 &1867058944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6840061395248221512, guid: 1a2f41eded4ce994897c99e0c751603e, type: 3}
+  m_PrefabInstance: {fileID: 1867058943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1913800528
 PrefabInstance:
   m_ObjectHideFlags: 0
