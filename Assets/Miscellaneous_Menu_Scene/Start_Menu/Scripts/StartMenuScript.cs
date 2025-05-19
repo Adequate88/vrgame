@@ -5,12 +5,27 @@ public class StartMenuController : MonoBehaviour
 {
     public void NewGame()
     {
-        SceneManager.LoadScene("Scene1_Tutorial_Entry/Entrance_Tutorial");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        // Check if the next scene index is within bounds
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        Debug.Log("NewGameNoTutorial starting, uncomment the thingy to make it work");
     }
 
     public void NewGameNoTutorial()
     {
-        // SceneManager.LoadScene("Bedroom");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 2;
+
+        // Check if the next scene index is within bounds
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
         Debug.Log("NewGameNoTutorial starting, uncomment the thingy to make it work");
     }
     
