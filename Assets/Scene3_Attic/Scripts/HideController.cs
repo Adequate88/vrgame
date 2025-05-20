@@ -15,10 +15,12 @@ public class HideController : MonoBehaviour
     public UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation.TeleportationProvider teleportationProvider; // XR Interaction Toolkit teleportation provider
     public AudioSource breathingAudio;
     public AudioSource closetAudio;
+    public GameObject HidingSpot;
 
     private bool playerInRange = false; // Tracks whether the player is in range.
     private bool isHidden = false; // True if the player is currently hidden.
     private bool isProcessing = false; // Prevents multiple activations at once.
+    private Color originalColor;
 
     // Controller position detection
     public Transform headTransform; // Reference to the HMD/camera transform
@@ -28,9 +30,13 @@ public class HideController : MonoBehaviour
     
     private List<InputDevice> controllers = new List<InputDevice>(); // List to store controllers
 
-  
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        originalColor = HidingSpot.GetComponent<Renderer>().material.color;
+    }
 
-    // Called when a collider enters the trigger area.
+    // Called when a collider enters the trigger area, thus changing the color of the hidingspot
     private void OnTriggerEnter(Collider other)
     {
         // Der Collider mit dem Player-Tag tritt in den Bereich ein
@@ -38,6 +44,10 @@ public class HideController : MonoBehaviour
         {
             playerInRange = true;
             Debug.Log("🙈 Player in Hiding Range");
+
+            // Color Change
+            HidingSpot.GetComponent<Renderer>().material.color = Color.green;
+
         }
     }
 
@@ -48,6 +58,9 @@ public class HideController : MonoBehaviour
         {
             playerInRange = false;
             Debug.Log("🐵 Player Exited Hiding Range");
+
+            // Color Change
+            HidingSpot.GetComponent<Renderer>().material.color = originalColor;
         }
     }
 
