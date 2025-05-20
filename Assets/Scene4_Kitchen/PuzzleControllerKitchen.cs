@@ -8,7 +8,7 @@ public class PuzzleControllerKitchen : PuzzleController
         // I dont know what the condition here is, so gonna let Karim do it
         
         // Initialize the puzzle state
-        puzzleComplete = true; // Set to false initially
+        puzzleComplete = false; // Set to false initially
     }
 
   

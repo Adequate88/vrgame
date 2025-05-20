@@ -14,7 +14,7 @@ public class OvenBakingController : MonoBehaviour
     public Material knobActiveMaterial;
     public Material doorBakingMaterial;
     public Material doorFinishedMaterial;
-
+    public PuzzleController puzzleController;
     [Header("Baking Settings")]
     public float requiredKnobAngle = 90f;
     public float bakingTime = 5f;              // Time in seconds
@@ -90,7 +90,7 @@ public class OvenBakingController : MonoBehaviour
         // Swap pot with bundt cake
         pot.SetActive(false);
         bundtCake.SetActive(true);
-
+        puzzleController.puzzleComplete = true; // Mark the puzzle as complete
         Debug.Log("Baking complete! Cake is ready 🎂");
     }
 }

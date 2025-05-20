@@ -134,6 +134,11 @@ public class PuzzleControllerBathroom : PuzzleController
             currentIndex = (currentIndex + 1) % flameParticleSystems.Length;
 
             // Optional: add a small delay before starting with the next candle
+            if (currentIndex == 0)
+            {
+                // Wait for a few seconds before starting the next cycle
+                yield return new WaitForSeconds(candleNextInterval);
+            }
             yield return new WaitForSeconds(candleNextInterval);
         }
     }

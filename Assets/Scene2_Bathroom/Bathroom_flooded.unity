@@ -507,11 +507,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1194056881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &140030029 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
-  m_PrefabInstance: {fileID: 701723819}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &141822159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1022585988185023539, guid: 52d19edc596e0b94a895be52d4f8ef3d, type: 3}
@@ -2900,7 +2895,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 940065726}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 415419633594686161, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_Convex
@@ -2908,51 +2903,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079322651343578894, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_text
-      value: Where are my ducks?
+      value: I swear these ducks look best in a specific order...
       objectReference: {fileID: 0}
+    - target: {fileID: 2079322651343578894, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8693125704291725282, guid: 0c67f1467e8f1d944880e399dfeaab08, type: 2}
     - target: {fileID: 2330958666859854975, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_Name
       value: StickyNote
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.09987999
+      value: 0.10990501
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10363426
+      value: 0.114036076
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.9087848
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.07452039
+      value: 10.506
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2769336
+      value: 3.708
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.001545184
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9989971
+      value: -0.7067034
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.032598883
+      value: 0.044753414
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00043156743
+      value: -0.7060919
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.030691998
+      value: -0.0013483333
       objectReference: {fileID: 0}
     - target: {fileID: 2482403143714437008, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4128,11 +4127,6 @@ Transform:
   - {fileID: 1753411855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &940065726 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2093545528856853810, guid: 1cace7d33755fb5419451a35b4397123, type: 3}
-  m_PrefabInstance: {fileID: 1562720326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &950510394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4889,11 +4883,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2157540612314815109, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.088
+      value: 9.961
       objectReference: {fileID: 0}
     - target: {fileID: 2157540612314815109, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.293
+      value: 2.426
       objectReference: {fileID: 0}
     - target: {fileID: 2157540612314815109, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6395,13 +6389,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_1_Enter
       objectReference: {fileID: 0}
+    - target: {fileID: 4452584825992205164, guid: 1cace7d33755fb5419451a35b4397123, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 28873409243956336, guid: 1cace7d33755fb5419451a35b4397123, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2093545528856853810, guid: 1cace7d33755fb5419451a35b4397123, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 140030029}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cace7d33755fb5419451a35b4397123, type: 3}
 --- !u!1 &1582786285
@@ -9155,6 +9150,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 424484658}
     - target: {fileID: 7993211422182186889, guid: 9aefdeb2ea2aba5b9879812be1997e34, type: 3}
+      propertyPath: waterVelocity
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993211422182186889, guid: 9aefdeb2ea2aba5b9879812be1997e34, type: 3}
       propertyPath: puzzleController
       value: 
       objectReference: {fileID: 1615639674}
@@ -9326,3 +9325,4 @@ SceneRoots:
   - {fileID: 432211392}
   - {fileID: 1739480835}
   - {fileID: 6588718525793532364}
+  - {fileID: 701723819}

@@ -7,7 +7,7 @@ public class DoorHandler : MonoBehaviour
     public FadeScreen fadeScreen;
     public PuzzleController puzzleController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private bool doorOpened = false;
+    protected bool doorOpened = false;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class DoorHandler : MonoBehaviour
     {
        
     }
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         // Check if the puzzle is complete and the door is opened
         if (puzzleController.puzzleComplete && other.CompareTag("DoorTrigger") && !doorOpened)
@@ -33,7 +33,7 @@ public class DoorHandler : MonoBehaviour
     {
         StartCoroutine(GoToNextSceneRoutine());
     }
-    private IEnumerator GoToNextSceneRoutine()
+    protected IEnumerator GoToNextSceneRoutine()
     {
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
@@ -49,7 +49,7 @@ public class DoorHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No next scene available. End of build settings.");
+            SceneManager.LoadScene(0);
         }
     }
 }
