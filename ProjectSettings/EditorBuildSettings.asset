@@ -5,25 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Miscellaneous_Menu_Scene/Start_Menu/Start Menu.unity
     guid: 12b7cbe250e48ad449312d16bf24774d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene0_Tutorial_Entry/Entrance_Tutorial.unity
     guid: b011a455972020a4fbfaf10070de6cd2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene1_Bedroom/Bedroom.unity
     guid: a38d64e73ddcd120a8359fd17027bca8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene2_Bathroom/Bathroom_flooded.unity
     guid: 78c00eaff3e7250e8bc8c9f17db2578d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene3_Attic/AtticRoom.unity
     guid: d22482c4904d64475a03a1910cf5aef3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene4_Kitchen/Kitchen_Room_Scene.unity
     guid: 162a64d64a22ab24a97b92c1b40253be
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene_5_Final_Room/Final Scene.unity
     guid: 08f50f9540f0b5b448889b8cfb2baea6
   m_configObjects:
