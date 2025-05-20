@@ -9,9 +9,13 @@ public class WaterController : MonoBehaviour
     public GameObject roof;
     public GameObject floor;
     public GameObject underWaterProfile;
+
+
     public PuzzleController puzzleController;
 
-    private Camera cam;
+    public Swimming swimmingController;
+
+    protected Camera cam;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +37,11 @@ public class WaterController : MonoBehaviour
         if (cam.transform.position.y < transform.position.y)
         {
             underWaterProfile.SetActive(true);
+            swimmingController.enabled = true;
+        } else
+        {
+            underWaterProfile.SetActive(false);
+            swimmingController.enabled = false;
         }
     }
 }

@@ -1,75 +1,101 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 
-public class Swimming : MonoBehaviour
+public class Swimming : ContinuousMoveProvider
 {
-    [Header("Values")] 
-    [SerializeField] private float swimForce = 3.0f;
-    [SerializeField] private float dragForce = 1.0f;
-    [SerializeField] private float maxControllerDistance = 0.5f;
-    [SerializeField] private bool isInWater = true;
-    [SerializeField] private bool swimReady = false;
-    // [SerializeField] private float minForce = 0.0f;
+    public float distanceThreshold = 0.2f; // Distance threshold for swimming gesture
+    public float maxSpeed = 2.5f; // Maximum speed for swimming
 
+    private bool controllersTogether = false; // True if controllers are currently together
+    private Vector3 currentVelocity = Vector3.zero; // Stores the current velocity for continuous movement
+    private float propulsionDecayRate = 1.0f; // Rate at which propulsion slows down over time
 
-    [SerializeField] private InputActionReference leftControllerSwim;
-    [SerializeField] private InputActionReference leftControllerVelocity;
-    [SerializeField] private InputActionReference leftControllerPosition;
-    [SerializeField] private InputActionReference rightControllerSwim;
-    [SerializeField] private InputActionReference rightControllerVelocity;
-    [SerializeField] private InputActionReference rightControllerPosition;
     
-    private Rigidbody rb;
-    
+    [SerializeField]
+    XRInputValueReader<Vector3> LeftHandVelocity = new XRInputValueReader<Vector3>("Left Hand Velocity");
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+    [SerializeField]
+    XRInputValueReader<Vector3> RightHandVelocity = new XRInputValueReader<Vector3>("Right Hand Velocity");
 
-        isInWater = false;
-    }
+    [SerializeField]
+    XRInputValueReader<Vector3> LeftHandPosition = new XRInputValueReader<Vector3>("Left Hand Position");
 
-    void FixedUpdate()
+    [SerializeField]
+    XRInputValueReader<Vector3> RightHandPosition = new XRInputValueReader<Vector3>("Right Hand Position");
+
+    [SerializeField]
+    Transform HeadTransform; // Reference to the HMD/camera transform
+
+    void Update()
     {
 
-        if (leftControllerSwim.action.IsPressed() && rightControllerSwim.action.IsPressed() && isInWater)
+        // Get the positions of the left and right controllers
+        var leftHandPositionValue = LeftHandPosition.ReadValue();
+        var rightHandPositionValue = RightHandPosition.ReadValue();
+
+        // Compute the distance between the controllers
+        float controllerDistance = Vector3.Distance(leftHandPositionValue, rightHandPositionValue);
+
+        // Check if controllers are together
+        if (controllerDistance < distanceThreshold)
         {
-            
-            var leftPosition = leftControllerPosition.action.ReadValue<Vector3>(); 
-            var rightPosition = rightControllerPosition.action.ReadValue<Vector3>();
-            float controllerDistance = Vector3.Distance(leftPosition, rightPosition);
-
-            if (controllerDistance < maxControllerDistance)
+            if (!controllersTogether)
             {
-                swimReady = true;
-
+                // Controllers just came together
+                controllersTogether = true;
+                Debug.Log("Controllers are together. Ready to swim.");
             }
-
-            if (swimReady && controllerDistance > maxControllerDistance)
+        }
+        else
+        {
+            if (controllersTogether)
             {
-                
-                swimReady = false;
-                var leftVelocity = leftControllerVelocity.action.ReadValue<Vector3>();
-                var rightVelocity = rightControllerVelocity.action.ReadValue<Vector3>();
-                var leftDirection = leftVelocity.normalized;
-                var rightDirection = rightVelocity.normalized;
-                var direction = Vector3.Lerp(leftDirection, rightDirection, 0.5f);
-                var force = swimForce * direction;
-                rb.AddForce(force, ForceMode.Acceleration);
-                
+                // Controllers just spread apart
+                controllersTogether = false;
+                Debug.Log("Controllers spread apart. Propelling forward.");
+                PropelForward(); // Trigger propulsion
             }
         }
 
-        if (rb.linearVelocity.sqrMagnitude > 0.01f)
+        // Apply continuous movement based on current velocity
+        ApplyContinuousMovement();
+    }
+
+    private void PropelForward()
+    {
+        // Get the velocity of the left and right hand + Direction of the eye gaze
+        Vector3 leftHandVelocityValue = LeftHandVelocity.ReadValue();
+        Vector3 rightHandVelocityValue = RightHandVelocity.ReadValue();
+        Vector3 gazeForward = HeadTransform.forward;
+
+        // Calculate the average speed of the hands
+        float leftHandSpeed = leftHandVelocityValue.magnitude;
+        float rightHandSpeed = rightHandVelocityValue.magnitude;
+        float averageSpeed = (leftHandSpeed + rightHandSpeed) / 2;
+
+        // Set a fixed propulsion speed for testing (also if velocity tracking is broken)
+        averageSpeed = 5.0f;
+
+        // Clamp the speed to a maximum
+        averageSpeed = Mathf.Clamp(averageSpeed, 0, maxSpeed);
+        // Calculate the propulsion direction
+        currentVelocity = gazeForward * averageSpeed;
+
+        
+        Debug.Log($"Propelling forward in direction: {currentVelocity} with speed: {averageSpeed}");
+    }
+
+    private void ApplyContinuousMovement()
+    {
+        // Apply the current velocity to move the rig
+        if (currentVelocity.magnitude > 0.01f)
         {
-            
-            rb.AddForce(-rb.linearVelocity * dragForce, ForceMode.Acceleration);
-            
+            MoveRig(currentVelocity * Time.deltaTime);
+
+            // Gradually reduce the velocity over time to simulate drag
+            currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, propulsionDecayRate * Time.deltaTime);
         }
     }
-}   
-
-
+}
