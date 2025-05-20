@@ -9,7 +9,11 @@ public class WaterController : MonoBehaviour
     public GameObject roof;
     public GameObject floor;
     public GameObject underWaterProfile;
+
+
     public PuzzleController puzzleController;
+
+    public Swimming swimmingController;
 
     private Camera cam;
     
@@ -33,6 +37,11 @@ public class WaterController : MonoBehaviour
         if (cam.transform.position.y < transform.position.y)
         {
             underWaterProfile.SetActive(true);
+            swimmingController.enabled = true;
+        } else
+        {
+            underWaterProfile.SetActive(false);
+            swimmingController.enabled = false;
         }
     }
 }
