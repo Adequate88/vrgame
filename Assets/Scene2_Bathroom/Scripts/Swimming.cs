@@ -76,8 +76,8 @@ public class Swimming : ContinuousMoveProvider
         float averageSpeed = (leftHandSpeed + rightHandSpeed) / 2;
 
         // Set a fixed propulsion speed for testing (also if velocity tracking is broken)
-        // averageSpeed = 5.0f;
-        
+        averageSpeed = 5.0f;
+
         // Clamp the speed to a maximum
         averageSpeed = Mathf.Clamp(averageSpeed, 0, maxSpeed);
         // Calculate the propulsion direction
