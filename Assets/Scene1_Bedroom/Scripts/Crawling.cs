@@ -135,7 +135,7 @@ public class Crawling : MonoBehaviour
 
     private void trackHand(InputDevice handDevice, ref Vector3 lastControllerPos, ref MoveStatus swipeStatus, bool isLeft)
     {
-        Debug.Log("enter hand tracking");
+        // Debug.Log("enter hand tracking");
 
         if (handDevice.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 currentControllerPos))
         {
