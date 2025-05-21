@@ -167,9 +167,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3134370766057345895, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_Anchor.y
+      value: 2.1000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134370766057345895, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_Limits.max
+      value: 17.674294
+      objectReference: {fileID: 0}
+    - target: {fileID: 3134370766057345895, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_Motor.force
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_TrackScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_SmoothRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 11894297}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3776029355842651397, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4452584825992205164, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
       propertyPath: m_Name
       value: Door_1_Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747794380266751132, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747794380266751132, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747794380266751132, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8900759158278766859, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
       propertyPath: fadeScreen
@@ -190,6 +242,11 @@ PrefabInstance:
 --- !u!4 &11894296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2093545528856853810, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
+  m_PrefabInstance: {fileID: 11894295}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &11894297 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8020979828058264746, guid: af921c2f6b525254e91572ed8d4be428, type: 3}
   m_PrefabInstance: {fileID: 11894295}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &50748399
