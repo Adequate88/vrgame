@@ -7,12 +7,14 @@ public class Swimming : ContinuousMoveProvider
 {
     public float distanceThreshold = 0.2f; // Distance threshold for swimming gesture
     public float maxSpeed = 2.5f; // Maximum speed for swimming
+    public float waterSurfaceHeight = 5.0f; // Height of the water surface
+    public float surfaceDrag = 0.5f; // Drag applied when swimming at the surface
 
     private bool controllersTogether = false; // True if controllers are currently together
     private Vector3 currentVelocity = Vector3.zero; // Stores the current velocity for continuous movement
     private float propulsionDecayRate = 1.0f; // Rate at which propulsion slows down over time
+    public bool isAtSurface = false; // True if the player is at or near the water surface
 
-    
     [SerializeField]
     XRInputValueReader<Vector3> LeftHandVelocity = new XRInputValueReader<Vector3>("Left Hand Velocity");
 
@@ -30,6 +32,7 @@ public class Swimming : ContinuousMoveProvider
 
     void Update()
     {
+        // Check if the player is at or near the surface
 
         // Get the positions of the left and right controllers
         var leftHandPositionValue = LeftHandPosition.ReadValue();
@@ -80,10 +83,18 @@ public class Swimming : ContinuousMoveProvider
 
         // Clamp the speed to a maximum
         averageSpeed = Mathf.Clamp(averageSpeed, 0, maxSpeed);
+
+        // Adjust propulsion direction and speed if at the surface
+        if (isAtSurface)
+        {
+            // Reduce upward movement and apply surface drag
+            gazeForward.y = Mathf.Min(gazeForward.y, 0); // Prevent upward movement
+            averageSpeed *= (1 - surfaceDrag); // Reduce speed at the surface
+        }
+
         // Calculate the propulsion direction
         currentVelocity = gazeForward * averageSpeed;
 
-        
         Debug.Log($"Propelling forward in direction: {currentVelocity} with speed: {averageSpeed}");
     }
 

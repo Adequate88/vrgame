@@ -2679,12 +2679,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2079322651343578894, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_text
-      value: I swear these ducks look best in a specific order...
+      value: Where are ny ducks?
       objectReference: {fileID: 0}
     - target: {fileID: 2079322651343578894, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -8693125704291725282, guid: 0c67f1467e8f1d944880e399dfeaab08, type: 2}
+    - target: {fileID: 2079322651343578894, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079322651343578894, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2330958666859854975, guid: 8db12d54032ba414ba7844a0ad99e773, type: 3}
       propertyPath: m_Name
       value: StickyNote
