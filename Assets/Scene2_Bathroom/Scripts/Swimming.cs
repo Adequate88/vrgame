@@ -13,6 +13,8 @@ public class Swimming : ContinuousMoveProvider
     private bool controllersTogether = false; // True if controllers are currently together
     private Vector3 currentVelocity = Vector3.zero; // Stores the current velocity for continuous movement
     private float propulsionDecayRate = 1.0f; // Rate at which propulsion slows down over time
+    private Vector3 sinkingVelocity = Vector3.down * 0.5f; // Tendency to sink
+
     public bool isAtSurface = false; // True if the player is at or near the water surface
 
     [SerializeField]
@@ -101,12 +103,20 @@ public class Swimming : ContinuousMoveProvider
     private void ApplyContinuousMovement()
     {
         // Apply the current velocity to move the rig
+
         if (currentVelocity.magnitude > 0.01f)
         {
-            MoveRig(currentVelocity * Time.deltaTime);
+            MoveRig((currentVelocity + sinkingVelocity) * Time.deltaTime);
 
             // Gradually reduce the velocity over time to simulate drag
             currentVelocity = Vector3.Lerp(currentVelocity, Vector3.zero, propulsionDecayRate * Time.deltaTime);
         }
+        else
+        { 
+            MoveRig(sinkingVelocity * Time.deltaTime); // Just sink
+
+        }
+
+        //MoveRig(sinkingVelocity * Time.deltaTime);
     }
 }

@@ -18,6 +18,7 @@ public class WaterControllerTutorial : WaterController
             underWaterProfile.SetActive(true);
             swimmingController.enabled = true;
             swimmingController.isAtSurface = false; // Not at the surface
+            continuousMovementController.useGravity = false;
         }
         else if (Mathf.Abs(cam.transform.position.y - transform.position.y) <= 0.1f)
         {
@@ -25,6 +26,7 @@ public class WaterControllerTutorial : WaterController
             underWaterProfile.SetActive(false); // Keep underwater effects active
             swimmingController.enabled = true;
             swimmingController.isAtSurface = true; // At the surface
+            continuousMovementController.useGravity = false; // Disable continuous movement controller
         }
         else
         {
@@ -32,6 +34,8 @@ public class WaterControllerTutorial : WaterController
             underWaterProfile.SetActive(false);
             swimmingController.enabled = false;
             swimmingController.isAtSurface = false; // Not at the surface
+            
+            continuousMovementController.useGravity = true;
         }
     }
 }

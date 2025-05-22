@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class WaterController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class WaterController : MonoBehaviour
     public GameObject floor;
     public GameObject underWaterProfile;
 
+    public DynamicMoveProvider continuousMovementController;
 
     public PuzzleController puzzleController;
 
@@ -40,6 +42,7 @@ public class WaterController : MonoBehaviour
             underWaterProfile.SetActive(true);
             swimmingController.enabled = true;
             swimmingController.isAtSurface = false; // Not at the surface
+            continuousMovementController.useGravity = false; // Disable continuous movement controller
         }
         else if (Mathf.Abs(cam.transform.position.y - transform.position.y) <= 0.1f)
         {
@@ -47,6 +50,7 @@ public class WaterController : MonoBehaviour
             underWaterProfile.SetActive(true); // Keep underwater effects active
             swimmingController.enabled = true;
             swimmingController.isAtSurface = true; // At the surface
+            continuousMovementController.useGravity = false;
         }
         else
         {
@@ -54,6 +58,7 @@ public class WaterController : MonoBehaviour
             underWaterProfile.SetActive(false);
             swimmingController.enabled = false;
             swimmingController.isAtSurface = false; // Not at the surface
+            continuousMovementController.useGravity = true; // Enable gravity
         }
     }
 }

@@ -8902,7 +8902,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 2656835776835001130}
     m_Modifications:
     - target: {fileID: 8482045797366263, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
+      propertyPath: m_Mediator
+      value: 
+      objectReference: {fileID: 2656835776835001132}
+    - target: {fileID: 8482045797366263, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
       propertyPath: HeadTransform
+      value: 
+      objectReference: {fileID: 482475473}
+    - target: {fileID: 8482045797366263, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
+      propertyPath: m_ForwardSource
       value: 
       objectReference: {fileID: 482475473}
     - target: {fileID: 2310081455486534927, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
@@ -10271,6 +10279,7 @@ MonoBehaviour:
   roof: {fileID: 0}
   floor: {fileID: 0}
   underWaterProfile: {fileID: 968105831}
+  continuousMovementController: {fileID: 1865279598}
   puzzleController: {fileID: 1066739247}
   swimmingController: {fileID: 1520673807}
 --- !u!1 &1761820536
@@ -13210,6 +13219,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8516626344344534243, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
   m_PrefabInstance: {fileID: 2656835776835001129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2656835776835001132 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6256359069401391859, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
+  m_PrefabInstance: {fileID: 2656835776835001129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa7b4195685c3846be746c74f0ab2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
