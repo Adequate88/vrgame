@@ -19,13 +19,13 @@ public class PursuerSequence : MonoBehaviour
     public AudioClip runningstepClip;
     public AudioClip optionalExtraSoundDuringEntry; // to add more customization to the room - e.g., kitchen has pots and pans
 
-    public float minTimeToFootsteps = 20f; // time to wait before footsteps are heard the first time
-    public float maxTimeToFootsteps = 40f; 
+    public float minTimeToFootsteps = 35f; // time to wait before footsteps are heard the first time
+    public float maxTimeToFootsteps = 45f; 
 
-    public float minTimeToKnocking = 5f; // time to wait BEFORE starting to knock 
-    public float maxTimeToKnocking = 7f;
-    public float minRepeatDelay = 60f; // The monster enters every (60-120s)
-    public float maxRepeatDelay = 120f;
+    public float minTimeToKnocking = 7f; // time to wait BEFORE starting to knock 
+    public float maxTimeToKnocking = 10f;
+    public float minRepeatDelay = 40f; // The monster enters every (60-120s)
+    public float maxRepeatDelay = 75f;
 
     public float timeAfterKnockingToCheck = 8f;  // Time after knocking for the monster to enter the room and check player's state
 
@@ -153,8 +153,8 @@ public class PursuerSequence : MonoBehaviour
     // This is the sequence that we run when the monster is INSIDE the house effectively
     {
         sequenceMonsterInsideRoomActive = true;
-        float durationWalk = 8f; // how long the monster is walking around inside the house
-        float durationClose = 8f; // how long it takes the door closing audio to play
+        float durationWalk = 6f; // how long the monster is walking around inside the house
+        float durationClose = 4f; // how long it takes the door closing audio to play
         float durationBeforeExtraSound = 3f; // If we want an extra sound, how long does the Monster have to walk around before it starts playing
         float totalDuration = durationWalk + durationClose; // Total time to monitor safety
 
