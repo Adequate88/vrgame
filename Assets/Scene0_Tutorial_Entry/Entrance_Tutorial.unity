@@ -4830,7 +4830,7 @@ Transform:
   m_GameObject: {fileID: 940197589}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000006670425, y: 0.0017191415, z: 0.0000001854852, w: 0.9999985}
-  m_LocalPosition: {x: 0, y: -0.051, z: 0}
+  m_LocalPosition: {x: 0, y: -0.046000004, z: 0}
   m_LocalScale: {x: 0.17871897, y: 0.17871897, z: 0.17871897}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5767,7 +5767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2404d383e1c4d42972b3c254ef0492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1904932413}
 --- !u!1 &1066739246
 GameObject:
   m_ObjectHideFlags: 0
@@ -6912,9 +6911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146b5107fe407264c973580edb20db91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualTarget: {fileID: 323610022}
-  localAxis: {x: 0, y: -1, z: 0}
-  baseVisual: {fileID: 0}
 --- !u!1 &1259743891
 GameObject:
   m_ObjectHideFlags: 0
@@ -7293,6 +7289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tunnelingVignette: {fileID: 116004566}
+  controllerInputActionManager: {fileID: 2047329581}
 --- !u!4 &1302928015
 Transform:
   m_ObjectHideFlags: 0
@@ -7779,7 +7776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2404d383e1c4d42972b3c254ef0492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1904932413}
 --- !u!1 &1392324201
 GameObject:
   m_ObjectHideFlags: 0
@@ -8301,6 +8297,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1050170690716999180, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_Anchor.y
+      value: 2.1000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050170690716999180, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_Limits.max
+      value: 17.674294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050170690716999180, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_Motor.force
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_TrackScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_SmoothRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 1439399320}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263918879893342318, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1740557116513345031, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
       propertyPath: m_Name
       value: Door_1_Exit Variant
@@ -8353,11 +8389,28 @@ PrefabInstance:
       propertyPath: puzzleController
       value: 
       objectReference: {fileID: 1066739247}
+    - target: {fileID: 7209978102316026359, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209978102316026359, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209978102316026359, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+--- !u!4 &1439399320 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5385548274486581697, guid: 0ad3679b0a0f1bcfa8b76bd661cc0126, type: 3}
+  m_PrefabInstance: {fileID: 1439399319}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443667428
 GameObject:
   m_ObjectHideFlags: 0
@@ -12425,6 +12478,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
   m_PrefabInstance: {fileID: 2035483641}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047329581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2430291702806713167, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
+  m_PrefabInstance: {fileID: 2656835776835001129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ac216f0eb04754b1d938aac6380b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &2058339400 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7570054883501488236, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
