@@ -425,7 +425,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65618422}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 563598b79a8e413458df548566414f74, type: 3}
   m_Name: 
@@ -1573,6 +1573,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2157540612314815109, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
   m_PrefabInstance: {fileID: 1538878996}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &433990303 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1348170653918298318, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
+  m_PrefabInstance: {fileID: 1538878996}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433990292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &455690364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1642,6 +1653,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c61575ace280f784396126ef01cb7e97, type: 3}
+--- !u!4 &478638835 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7178974398655842211, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
+  m_PrefabInstance: {fileID: 1538878996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &481221498
 GameObject:
   m_ObjectHideFlags: 0
@@ -8570,7 +8586,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 869990745756164734, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       propertyPath: m_Name
-      value: XR Origin (XR Rig) (1)
+      value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
     - target: {fileID: 985919611987882543, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       propertyPath: m_InteractionManager
@@ -9424,6 +9440,11 @@ BoxCollider:
 Transform:
   m_CorrespondingSourceObject: {fileID: 899872154592552861, guid: b9e9e632485353a4ea1a028b36a26d2e, type: 3}
   m_PrefabInstance: {fileID: 1565147375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1703151794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1561326193637591466, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
+  m_PrefabInstance: {fileID: 1538878996}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714174990
 GameObject:
@@ -12766,16 +12787,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiddenPosition: {fileID: 1511874332}
   exitPosition: {fileID: 566676469}
-  xrOrigin: {fileID: 0}
-  fadeScreen: {fileID: 0}
+  xrOrigin: {fileID: 433990301}
+  fadeScreen: {fileID: 999217109}
   fadeWaitTime: 1
-  teleportationProvider: {fileID: 0}
+  teleportationProvider: {fileID: 433990303}
   breathingAudio: {fileID: 1016200524}
   closetAudio: {fileID: 1797232058}
   HidingSpot: {fileID: 1811573464}
-  headTransform: {fileID: 0}
-  leftControllerTransform: {fileID: 0}
-  rightControllerTransform: {fileID: 0}
+  headTransform: {fileID: 156646040}
+  leftControllerTransform: {fileID: 478638835}
+  rightControllerTransform: {fileID: 1703151794}
   hideGestureThreshold: 0.2
 --- !u!65 &2129688683
 BoxCollider:
