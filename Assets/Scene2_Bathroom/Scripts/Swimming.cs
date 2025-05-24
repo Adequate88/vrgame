@@ -9,7 +9,7 @@ public class Swimming : ContinuousMoveProvider
     public float maxSpeed = 2.5f; // Maximum speed for swimming
     public float waterSurfaceHeight = 5.0f; // Height of the water surface
     public float surfaceDrag = 0.5f; // Drag applied when swimming at the surface
-
+    public AudioSource audioSource; // Reference to the AudioSource component
     private bool controllersTogether = false; // True if controllers are currently together
     private Vector3 currentVelocity = Vector3.zero; // Stores the current velocity for continuous movement
     private float propulsionDecayRate = 1.0f; // Rate at which propulsion slows down over time
@@ -42,7 +42,7 @@ public class Swimming : ContinuousMoveProvider
 
         // Compute the distance between the controllers
         float controllerDistance = Vector3.Distance(leftHandPositionValue, rightHandPositionValue);
-
+        
         // Check if controllers are together
         if (controllerDistance < distanceThreshold)
         {
@@ -61,6 +61,7 @@ public class Swimming : ContinuousMoveProvider
                 controllersTogether = false;
                 Debug.Log("Controllers spread apart. Propelling forward.");
                 PropelForward(); // Trigger propulsion
+                audioSource.Play(); // Play the swimming sound
             }
         }
 

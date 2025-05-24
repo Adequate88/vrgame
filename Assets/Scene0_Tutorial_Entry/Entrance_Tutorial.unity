@@ -1129,13 +1129,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_text
-      value: 'You can also pick stuff up
-
-
-
-
-        !!! Grab image !!!
-
+      value: 'Pick objects up by pointing at the object and pressing the back trigger
+        (of either controller)
 
 '
       objectReference: {fileID: 0}
@@ -1197,27 +1192,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.41
+      value: 2.982
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 6.88
+      value: 7.875
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1229,7 +1224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1812,121 +1807,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335137081}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &342375995
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1263967566}
-    m_Modifications:
-    - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_text
-      value: '
-
-        Looks like you''ve got to crawl under here to get out of
-        this room
-
-
-        (explain how to crawl)
-
-        (Add an object to allow
-        peopleto crawl)'
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.111
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071079
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710576
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 8.219
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.56500006
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6731945439172844594, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-      propertyPath: m_Name
-      value: Info Crawling
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
---- !u!224 &342375996 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
-  m_PrefabInstance: {fileID: 342375995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &344189151
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,16 +3654,15 @@ PrefabInstance:
       propertyPath: m_text
       value: '
 
-
-
         Better get out of the water
 
 
-        try climbing up the
-        ladder and into the next area
+        Climb up the ladder
+        by grabbing the handles with the same Grab Button.
 
 
-        !!! CLIMB IMAGE !!!'
+        Or, if you prefer,
+        use the teleport button and point it at the ladder'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -4359,13 +4238,7 @@ PrefabInstance:
 
 
         you can also use the right controller
-        to snap-rotate
-
-
-        !!! teleport IMAGE !!!
-
-        !!! snap rotate
-        image !!!'
+        to snap or continuously rotate'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -4472,6 +4345,135 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
+--- !u!1 &836906515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836906516}
+  - component: {fileID: 836906517}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &836906516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836906515}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.6742205, z: 0, w: 0.7385301}
+  m_LocalPosition: {x: 4.4928393, y: 1.3059027, z: 4.9869733}
+  m_LocalScale: {x: 0.7142856, y: 0.71428573, z: 0.7142856}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2656835776835001135}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &836906517
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836906515}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8392c438c9c6d40378b09e2dc810bafc, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8392c438c9c6d40378b09e2dc810bafc, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.17
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 109
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &858418620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,15 +5086,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_text
-      value: 'Anything in this shade of green is openable.
+      value: 'Anything in this shade of green is openable by using the grab button
+        on the object
 
 
         Try it out!
 
 
 
-        Hmm,
-        weird... when did our stove get here?'
+        Hmm, weird... when did our
+        stove get here?'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -7464,7 +7467,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 342375996}
   - {fileID: 1861712023}
   - {fileID: 742673504}
   - {fileID: 208431268}
@@ -9190,21 +9192,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_text
-      value: '
+      value: 'Going for a little swim are we?
 
 
-        going for a little swim are we?
+        Put both controllers together
+        and then spread them apart again to propell yourself forward in water...
 
 
-        breaststroke was
-        always your favourite way to go around...
-
-
-        !!! swim image !!!
-
-
-        (DevNote.
-        Bugged right now)'
+        Its
+        almost like a breaststroke!'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -9341,6 +9337,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2656835776835001132}
     - target: {fileID: 8482045797366263, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1520673810}
+    - target: {fileID: 8482045797366263, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
       propertyPath: HeadTransform
       value: 
       objectReference: {fileID: 482475473}
@@ -9395,14 +9395,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7834045150162774855, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1520673810}
   m_SourcePrefab: {fileID: 100100000, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
 --- !u!114 &1520673807 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8482045797366263, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
   m_PrefabInstance: {fileID: 1520673806}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1520673809}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7de77a1429a5cd36a07083618b5c747, type: 3}
@@ -9413,6 +9416,108 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2310081455486534927, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
   m_PrefabInstance: {fileID: 1520673806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1520673809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7834045150162774855, guid: f6f1dd8ba96f059a39fa05554dfcd11f, type: 3}
+  m_PrefabInstance: {fileID: 1520673806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1520673810
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520673809}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8a4fc4d21145e3672a8d51ced83052b7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 8a4fc4d21145e3672a8d51ced83052b7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.697
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1535817393
 GameObject:
   m_ObjectHideFlags: 0
@@ -11247,11 +11352,7 @@ PrefabInstance:
         Look
         for hiding spots around the environment. When you get close to a good one,
         it will glow green. Simply raise both controllers to your face like you''re
-        covering your eyes with your hands to hide from danger.
-
-
-        !!! hiding
-        image !!!'
+        covering your eyes with your hands to hide from danger.'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_margin.w
@@ -11740,17 +11841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_text
-      value: '
+      value: 'Once your are done, you are good to go!
 
 
-        Once your are done, you are good to go!
-
-
-        Grab the
-        handle and pull!
-
-
-        IMAGE ?'
+        Doors are openable
+        too, grab the handle with the  grab button'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -12917,7 +13012,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_text
-      value: "\n\ntry to see what is under this block \n\n!!! crawl image !!!"
+      value: "You can crawl under beds by performing a crawling motion near them.\n\nTry
+        it out! Put one controller infront of the other and repeat that motion! \n"
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -13001,7 +13097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.41
+      value: -0.387
       objectReference: {fileID: 0}
     - target: {fileID: 3857335410188811158, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13678,6 +13774,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1263967566}
     m_Modifications:
+    - target: {fileID: 2248672939809159822, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4637
+      objectReference: {fileID: 0}
+    - target: {fileID: 2248672939809159822, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.114
+      objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_text
       value: 'You''ve just arrived at your house.
@@ -13688,8 +13792,9 @@ PrefabInstance:
         You ought to discover how to get around this place first...
 
 
-        use
-        the lefthand controller to move around'
+        Use
+        the lefthand joystick to move around or the righthand joystick to teleport
+        by pointing at the ground'
       objectReference: {fileID: 0}
     - target: {fileID: 2469885872374322235, guid: ab55e7d7fd94c544eaca72791a6b2b9e, type: 3}
       propertyPath: m_sharedMaterial
@@ -13909,6 +14014,9 @@ PrefabInstance:
     - {fileID: 5952347664204164352, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
     - {fileID: 1840428111292734970, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2157540612314815109, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 836906516}
     - targetCorrespondingSourceObject: {fileID: 5723099618730811762, guid: 95ab6b4ee5f3d704594aa746fd948472, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2126930026}
