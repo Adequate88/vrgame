@@ -67,8 +67,22 @@ The general structure of our `assets` folder is broken down into the following g
   
 ### Adapted Scripts/Assets:
 
+ - Locker, Wardrobe, Bathtub, Large Fridge: Modified to be openable with hiding mechanic. Also changes color in proximity of player.
+ - Bed: Modified so that the asset changes color in proximity of player.
+ - Washing Machine, Fridge, Oven: Altered color to indicate that it is openable. Additionally added hinge joints and grab interaction to make it openable.
+ - Ducks: Made to be interactable objects
+ - Candles: Altered in bathroom puzzle to give a hint.
+
 ### Unmodified Scripts/Assets:
+
+ - All other assets, except for those mentioned in the previous section are unmodified and taken from the Unity Asset Store.
 
 ### Relevant Content (scripts, assets, scenes) for each custom feature.
 
 - Swimming Mechanic: The relevant scripts are `WaterController.cs` and `Swimming.cs`. The relevant objects are the `ocean` and `Swimming` which is found as a child of the XR Origin/Locomotion object.
+
+- Crawling Mechanic:
+
+- Cooking Mechanic:
+
+- Hiding Mechanic:
