@@ -1,11 +1,11 @@
-# *Title Here*
+# *Intruder*
 ---
-This repository contains the source Unity files for *Title Here*. All files within the `assets` folder are relevant to the structure of the game.
+This repository contains the source Unity files for *Intruder*. All files within the `assets` folder are relevant to the structure of the game.
 
 ## Overview
 
 In this README we cover the following topics.
-- Produced scripts and assets: Created entirely by your team.
+- Produced scripts and assets: Created entirely by our team.
 - Adapted scripts/assets: Modified from external sources.
 - Unmodified scripts/assets: Used as-is.
 - Relevant content (scripts, assets, scenes) for each custom feature.
@@ -58,6 +58,7 @@ The general structure of our `assets` folder is broken down into the following g
   - `DoorHandlerKitchen.cs`: Child of `DoorHandler` to handle door for kitchen.
   - `OvenBakingController.cs`: Handles when the pot is in the oven and timer for baking to finish.
   - `PlaceIngredientsInPot.cs`: Handles placing of ingredients in pot.
+  - `PotStirManager.cs`: Handles the mixing of ingredients in the pot
   - `PlayerSafetyState.cs`: Handles when player is in the safe location to hide from the monster.
   - `PursuerSequence.cs`: Handles monster knocking on door and entering room, and acts as trigger to game over.
   - `StickyNoteFunctionality.cs`: Script for special 'sticky note'-like interaction.
@@ -72,6 +73,9 @@ The general structure of our `assets` folder is broken down into the following g
  - Washing Machine, Fridge, Oven: Altered color to indicate that it is openable. Additionally added hinge joints and grab interaction to make it openable.
  - Ducks: Made to be interactable objects
  - Candles: Altered in bathroom puzzle to give a hint.
+ - Pot in kitchen: Altered to contain unbaked cake mix when mixing is complete
+ - Cake Batter: Flattened out a cake to create the cake mix in the pot referenced above.
+ - Spoons: colored to make part of puzzle using different materials.
 
 ### Unmodified Scripts/Assets:
 
@@ -83,6 +87,6 @@ The general structure of our `assets` folder is broken down into the following g
 
 - Crawling Mechanic:
 
-- Cooking Mechanic:
+- Cooking Mechanic: The relevant scripts are `PlaceIngredientsInPot.cs`, `OvenBakingController.cs`, `PotStirManager`, and `PlaceIngredientsInPot.cs`. The cooking mechanic uses functionalities such as grabbing and placing in a `Pot` object, then holding the `Pot` and mixing using a `Spoon` by grabbing the correct `Spoon` and moving it within the `Pot`'s area to "mix" in the ingredients (`Cheese`, `Milk`, `Egg`), to have cake Batter. Step 2 is placing the batter and rotating the knob of the oven and waiting until the cake is complete.
 
 - Hiding Mechanic:
