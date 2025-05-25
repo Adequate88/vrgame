@@ -33,14 +33,13 @@ The general structure of our `assets` folder is broken down into the following g
   - `PuzzleControllerTutorial.cs`: Child of `PuzzleController` - required for allowing player to pass through to the next room when using door.
   - `WaterControllerTutorial.cs`: Child of `WaterController`. Specifcally ensures that the water stays static (since it is not in bathroom).
 - `Scene1_Bedroom\`
-  - `CamScript.cs`:
+  - `CamScript.cs`: DELETED
   - `Crawling.cs`: Handles player crawling mechanism
-  - `Grabbed.cs`:
+  - `Grabbed.cs`: DELETED
   - `OpenWithPuzzle.cs`: Child of `PuzzleController`, handles bedroom puzzle completion.
-  - `PushButton.cs`: Handles the pressing of buttons for the bedroom puzzle
-  - `RespawnManager.cs`:
-  - `SocketEvent.cs`:
-  - `SpawnCube6.cs`:
+  - `PushButton.cs`: Handles puzzle completion by keeping track of the pressed sequence.
+  - `SocketEvent.cs`: Checks whether missing keys are put back into their corresponding socket interactors on the keypad.
+  - spAWN6CUBE & RESPAWN ALSO DELETED
 - `Scene2_Bathroom\`
   - `PuzzleControllerBathroom.cs`: Child of `PuzzleController`, handles bathroom puzzle.
   - `PuzzleController.cs`: Parent object to handle puzzles of each scene and to allow the player to proceed to next room.
@@ -86,7 +85,7 @@ The general structure of our `assets` folder is broken down into the following g
 
 - Swimming Mechanic: The relevant scripts are `WaterController.cs` and `Swimming.cs`. The relevant objects are the `ocean` and `Swimming` which is found as a child of the XR Origin/Locomotion object.
 
-- Crawling Mechanic:
+- Crawling Mechanic: The relevant script is `Crawling.cs` and is directly located on the `XR Rig`. An object tagged `Bed` is the target of the script, along with the player's `Move Provider`.
 
 - Cooking Mechanic: The relevant scripts are `PlaceIngredientsInPot.cs`, `OvenBakingController.cs`, `PotStirManager`, and `PlaceIngredientsInPot.cs`. The cooking mechanic uses functionalities such as grabbing and placing in a `Pot` object, then holding the `Pot` and mixing using a `Spoon` by grabbing the correct `Spoon` and moving it within the `Pot`'s area to "mix" in the ingredients (`Cheese`, `Milk`, `Egg`), to have cake Batter. Step 2 is placing the batter and rotating the knob of the oven and waiting until the cake is complete.
 
