@@ -9307,7 +9307,7 @@ MonoBehaviour:
   headTransform: {fileID: 1717641405}
   leftControllerTransform: {fileID: 1147874004}
   rightControllerTransform: {fileID: 1147874003}
-  hideGestureThreshold: 0.2
+  hideGestureThreshold: 0.5
 --- !u!4 &2093544319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4076643822354392, guid: b43257630abae854ca0c1214918e7343, type: 3}

@@ -2792,7 +2792,7 @@ MonoBehaviour:
   headTransform: {fileID: 482475473}
   leftControllerTransform: {fileID: 2656835776835001133}
   rightControllerTransform: {fileID: 2656835776835001131}
-  hideGestureThreshold: 0.2
+  hideGestureThreshold: 0.5
 --- !u!65 &514432086
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4656,8 +4656,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.95705664, y: 1.3425953, z: 1.2343384}
-  m_Center: {x: -0.021471756, y: -0.17129818, z: 0.11716867}
+  m_Size: {x: 0.95705664, y: 1.3425953, z: 1.1181462}
+  m_Center: {x: -0.021471756, y: -0.17129818, z: 0.059071988}
 --- !u!1 &872111593
 GameObject:
   m_ObjectHideFlags: 0
@@ -6172,7 +6172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4616165200164398447, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.578
+      value: 8.703
       objectReference: {fileID: 0}
     - target: {fileID: 4616165200164398447, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13188,7 +13188,7 @@ PrefabInstance:
       value: '
 
 
-        Now get back out!
+        Now turn arount and get back out!
 
 
 '
@@ -13980,7 +13980,7 @@ MonoBehaviour:
       m_Name: Left Hand Move
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: b1a5828d-69a6-4b15-9170-9927e46927cf
+      m_Id: ef203777-1b9c-40d8-bc5c-c808bb071bfd
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -13994,7 +13994,7 @@ MonoBehaviour:
       m_Name: Right Hand Move
       m_Type: 0
       m_ExpectedControlType: Vector2
-      m_Id: 4ac39dd2-a211-4b48-ba0b-f1aee32b7fe9
+      m_Id: 1d715952-5216-4bd3-8040-2b6bd614a6f9
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
