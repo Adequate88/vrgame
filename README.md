@@ -76,6 +76,7 @@ The general structure of our `assets` folder is broken down into the following g
  - Pot in kitchen: Altered to contain unbaked cake mix when mixing is complete
  - Cake Batter: Flattened out a cake to create the cake mix in the pot referenced above.
  - Spoons: colored to make part of puzzle using different materials.
+ - Scenes in Tutorial have images to teach user the movements and buttons - created by getting images and making sprites using the images.
 
 ### Unmodified Scripts/Assets:
 
