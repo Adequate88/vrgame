@@ -90,4 +90,4 @@ The general structure of our `assets` folder is broken down into the following g
 
 - Cooking Mechanic: The relevant scripts are `PlaceIngredientsInPot.cs`, `OvenBakingController.cs`, `PotStirManager`, and `PlaceIngredientsInPot.cs`. The cooking mechanic uses functionalities such as grabbing and placing in a `Pot` object, then holding the `Pot` and mixing using a `Spoon` by grabbing the correct `Spoon` and moving it within the `Pot`'s area to "mix" in the ingredients (`Cheese`, `Milk`, `Egg`), to have cake Batter. Step 2 is placing the batter and rotating the knob of the oven and waiting until the cake is complete.
 
-- Hiding Mechanic: The relevant scripts are `HideController.cs` ,`FadeScreen.cs` and `PlayerSafetyState.cs`. For each hiding spot a `SafeZone`, an `ÈxitPosition` and a `HiddenPosition` are determined.
+- Hiding Mechanic: The relevant scripts are `HideController.cs` ,`FadeScreen.cs` and `PlayerSafetyState.cs`. For each hiding spot a `SafeZone`, an `ÈxitPosition` and a `HiddenPosition` are determined. Each hiding spot also uses the asset `BreathingSound` as well as an individual opening/closing sound for the particular object.
