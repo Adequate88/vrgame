@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Readers;
 
 
-public class Crawling : MonoBehaviour
+public class Crawling : ContinuousMoveProvider
 {
     // hand controller devices, used for tracking
     private InputDevice rightDevice;
@@ -22,9 +25,6 @@ public class Crawling : MonoBehaviour
         Completed
     }
 
-    // if TrackedDirection dir is None, all the values below are obsolete, to be reset by state machine
-    private Vector3 initialMove = new Vector3(0,0,0);
-
     // latent info per controller
     private Vector3 lastLeftPos = new Vector3(0, 0, 0);
     private Vector3 lastRightPos = new Vector3(0, 0, 0);
@@ -37,22 +37,18 @@ public class Crawling : MonoBehaviour
     private float requiredSwipeDist = 0.3f;
     private float currentSwipeDist = 0f;
 
-    private Vector3 positionBeforeCrawl;
-    private Vector3 positionUnderBed = new Vector3(-3.1749f, 0f, -1.0465f); //new Vector3(6.9563f, 0f, -2.4816f);
-    private bool isCrawlingUnderBed = false; // true if positionBeforeCrawl is relevant
+    private bool isCrawlingUnderBed = false;
     private Vector3 initialScale;
 
-    // external objects
-    public GameObject bed;
-    public GameObject bedCollider;
-    public GameObject moveProvider;
+    // Tag objects
+    GameObject bed;
+    GameObject bedCollider;
+    GameObject moveProvider;
 
     private Color originalColor;
 
     // true if player is within the crawling zone
     private bool crawlingPossible = false;
-    private bool crawlingPermanentlyDisabled = false;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,6 +62,8 @@ public class Crawling : MonoBehaviour
         bedCollider = GameObject.FindWithTag("Bed Collider");
 
         originalColor = bed.GetComponent<Renderer>().material.color;
+
+        initialScale = transform.localScale;
     }
 
     // considering that OnTriggerEnter is only invoked when entering the zone and not everytime the player IS in the zone
@@ -79,7 +77,7 @@ public class Crawling : MonoBehaviour
             bed.GetComponent<Renderer>().material.color = Color.yellow;
 
             // enable crawling
-            crawlingPossible = true;          
+            crawlingPossible = true;
         }
     }
 
@@ -93,50 +91,57 @@ public class Crawling : MonoBehaviour
         {
             // disable crawling
             crawlingPossible = false;
+            isCrawlingUnderBed = false;
 
             bed.GetComponent<Renderer>().material.color = originalColor;
 
+            // reset scale and enable locomotion
+            transform.localScale = initialScale;
+            moveProvider.GetComponent<DynamicMoveProvider>().enabled = true;
+
+
             // reset everything
-            SwipeReset();
+            //SwipeReset();
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Debug.Log("Crawling is possible: " + crawlingPossible);
-
         // exit if crawling is not allowed
-        if (crawlingPermanentlyDisabled | !crawlingPossible) return;
-
-        // Debug.Log("Position: " + transform.position);
+        if (!crawlingPossible) return;
 
         // track hands positions one at a time
-
         // if left is not already tracked and right has not yet been completed, track right
-        if ((swipeLeftStatus == MoveStatus.None | swipeLeftStatus == MoveStatus.Completed) & swipeRightStatus != MoveStatus.Completed)
+        if (swipeLeftStatus == MoveStatus.None | swipeLeftStatus == MoveStatus.Completed)
         {
+            // reset left status
+            swipeLeftStatus = MoveStatus.None;
             trackHand(rightDevice, ref lastRightPos, ref swipeRightStatus, false);
         }
 
         // if right is not already tracked and left has not yet been completed, track left
-        if ((swipeRightStatus == MoveStatus.None | swipeRightStatus == MoveStatus.Completed) & swipeLeftStatus != MoveStatus.Completed)
+        if (swipeRightStatus == MoveStatus.None | swipeRightStatus == MoveStatus.Completed)
         {
+            // reset right status
+            swipeRightStatus = MoveStatus.None;
             trackHand(leftDevice, ref lastLeftPos, ref swipeLeftStatus, true);
         }
-        
-        // check swipe completeness
-        if (swipeLeftStatus == MoveStatus.Completed & swipeRightStatus == MoveStatus.Completed)
+
+        // when first crawling, lower vision and remove dynamic move provider
+        if (!isCrawlingUnderBed & (swipeRightStatus != MoveStatus.None | swipeLeftStatus != MoveStatus.None))
         {
-            Crawl();
+            transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+
+            // disable locomotion
+            moveProvider.GetComponent<DynamicMoveProvider>().enabled = false;
+
+            isCrawlingUnderBed = true;
         }
-        // else do nothing
     }
 
     private void trackHand(InputDevice handDevice, ref Vector3 lastControllerPos, ref MoveStatus swipeStatus, bool isLeft)
     {
-        // Debug.Log("enter hand tracking");
-
         if (handDevice.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 currentControllerPos))
         {
             if (!validLastPos)
@@ -145,7 +150,7 @@ public class Crawling : MonoBehaviour
                 validLastPos = true;    
             }
 
-            float delta = Vector3.Distance(currentControllerPos, lastControllerPos); // previously lastTrackedPos
+            float delta = Vector3.Distance(currentControllerPos, lastControllerPos);
             if (delta <= SwipeThreshold)
             {
                 lastControllerPos = currentControllerPos;
@@ -154,24 +159,23 @@ public class Crawling : MonoBehaviour
 
             Vector3 currentMove = currentControllerPos - lastControllerPos;
 
-
             switch (swipeStatus)
             {
                 // 1
                 case MoveStatus.None: // first move tracked
-                    //bed.GetComponent<Renderer>().material.color = Color.white;
 
-                    initialMove = currentMove;
-                    currentSwipeDist = delta;
+                    if (Vector3.Dot(currentMove, transform.forward) > 0) // same direction as going forward
+                    {
+                        currentSwipeDist = delta;
 
-                    swipeStatus = MoveStatus.ForwardOngoing;
+                        swipeStatus = MoveStatus.ForwardOngoing;
+                    }
                     break;
 
                 // 2 (+ 3)
                 case MoveStatus.ForwardOngoing:
-                    //bed.GetComponent<Renderer>().material.color = isLeft ? Color.black : Color.red; // left is black, right is red
 
-                    if (Vector3.Dot(currentMove, initialMove) > 0) // same direction move tracked + is it enough to complete half of motion?
+                    if (Vector3.Dot(currentMove, transform.forward) > 0) // same direction as going forward + is it enough to complete half of motion?
                     {
                         currentSwipeDist += delta;
 
@@ -187,9 +191,8 @@ public class Crawling : MonoBehaviour
                 case MoveStatus.ForwardCompleted:
                     //bed.GetComponent<Renderer>().material.color = Color.blue;
 
-                    if (Vector3.Dot(currentMove, initialMove) < 0) // opposite directions moves tracked
+                    if (Vector3.Dot(currentMove, transform.forward) < 0) // opposite directions moves tracked
                     {
-                        initialMove = currentMove;
                         currentSwipeDist = delta;
 
                         swipeStatus = MoveStatus.BackwardOngoing;
@@ -200,9 +203,11 @@ public class Crawling : MonoBehaviour
                 case MoveStatus.BackwardOngoing:
                     //bed.GetComponent<Renderer>().material.color = Color.gray;
 
-                    if (Vector3.Dot(currentMove, initialMove) > 0) // same direction as previous move tracked + is it enough to complete motion?
+                    if (Vector3.Dot(currentMove, -(transform.forward)) > 0) // same direction as going backwards + is it enough to complete motion?
                     {
-                        currentSwipeDist += delta; 
+                        currentSwipeDist += delta;
+
+                        MoveForward();
 
                         if (currentSwipeDist > requiredSwipeDist)
                         {
@@ -215,8 +220,7 @@ public class Crawling : MonoBehaviour
                     break;
 
                 case MoveStatus.Completed:
-                    //bed.GetComponent<Renderer>().material.color = Color.yellow;
-                    //swipeStatus = MoveStatus.None; leave that to the outside function
+                    //swipeStatus = MoveStatus.None; leave that to update
                     
                     break;  
             }
@@ -226,63 +230,9 @@ public class Crawling : MonoBehaviour
 
     }
 
-    private void Crawl()
+
+    private void MoveForward()
     {
-        Debug.Log("enter crawling");
-
-        // if position already active, go back to this original position and disable it afterwards
-        // if no position has been set active, keep track of the current position before crawling
-        if (isCrawlingUnderBed)
-        {
-            // crawling out
-
-            transform.position = positionBeforeCrawl;
-            transform.localScale = initialScale;
-
-            // enable locomotion
-            moveProvider.GetComponent<DynamicMoveProvider>().enabled = true;
-
-            isCrawlingUnderBed = false;
-            crawlingPermanentlyDisabled = true;
-        }
-        else
-        {
-            // crawling in 
-
-            positionBeforeCrawl = transform.position;
-            transform.position = positionUnderBed;
-
-            initialScale = transform.localScale;
-            transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-
-            // disable locomotion
-            moveProvider.GetComponent<DynamicMoveProvider>().enabled = false;
-
-            isCrawlingUnderBed = true;
-
-            // disable crawling until cube 6 has been grabbed
-            crawlingPossible = false;
-        }
-
-        // because changed positions by a great deal, not to ruin the algorithm
-        validLastPos = false;
-        SwipeReset();
-    }
-
-
-    public void Cube6EnablesCrawling()
-    {
-        crawlingPossible = true;
-    }
-
-    public void Cube6DisablesCrawling()
-    {
-        crawlingPossible = false;
-    }
-
-    private void SwipeReset()
-    {
-        swipeRightStatus = MoveStatus.None;
-        swipeLeftStatus = MoveStatus.None;
+        MoveRig((transform.forward * 1.5f) * Time.deltaTime);
     }
 }
