@@ -5247,7 +5247,7 @@ MonoBehaviour:
   headTransform: {fileID: 941280995}
   leftControllerTransform: {fileID: 941280994}
   rightControllerTransform: {fileID: 941280993}
-  hideGestureThreshold: 0.2
+  hideGestureThreshold: 0.5
 --- !u!1001 &569681243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18778,7 +18778,7 @@ MonoBehaviour:
   headTransform: {fileID: 941280995}
   leftControllerTransform: {fileID: 941280994}
   rightControllerTransform: {fileID: 941280993}
-  hideGestureThreshold: 0.2
+  hideGestureThreshold: 0.5
 --- !u!65 &2116786190
 BoxCollider:
   m_ObjectHideFlags: 0
