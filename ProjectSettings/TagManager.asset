@@ -23,6 +23,22 @@ TagManager:
   - PurpleDuck
   - RedDuck
   - DoorTrigger
+  - 6
+  - 4
+  - 2
+  - 7
+  - Cube 1 Interactor
+  - 8
+  - Cube 6 Interactor
+  - SpawningPoint
+  - 5
+  - 9
+  - 1
+  - 3
+  - HidingSpot
+  - Bed Collider
+  - Bed
+  - Move Provider
   layers:
   - Default
   - TransparentFX
