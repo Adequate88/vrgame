@@ -37,7 +37,7 @@ public class Crawling : ContinuousMoveProvider
     private float requiredSwipeDist = 0.3f;
     private float currentSwipeDist = 0f;
 
-    public bool isCrawlingUnderBed = false;
+    private bool isCrawlingUnderBed = false;
     private Vector3 initialScale;
 
     // Tag objects
