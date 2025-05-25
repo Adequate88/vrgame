@@ -4649,9 +4649,10 @@ GameObject:
   - component: {fileID: 858418624}
   - component: {fileID: 858418623}
   - component: {fileID: 858418622}
+  - component: {fileID: 858418625}
   m_Layer: 0
   m_Name: VolumeToCrawlUnder Visual
-  m_TagString: Untagged
+  m_TagString: Bed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4724,6 +4725,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1777578495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &858418625
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858418620}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.95705664, y: 1.3425953, z: 1.2343384}
+  m_Center: {x: -0.021471756, y: -0.17129818, z: 0.11716867}
 --- !u!1 &872111593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7118,7 +7140,7 @@ GameObject:
   - component: {fileID: 1213738571}
   m_Layer: 0
   m_Name: VolumeToCrawlUnder Collider
-  m_TagString: Untagged
+  m_TagString: Bed Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7153,12 +7175,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9006155, y: 1.2788955, z: 1.298088}
-  m_Center: {x: -0.049692385, y: -0.13944884, z: 0.14904346}
+  m_Size: {x: 0.95733446, y: 0.9390446, z: 1.0018837}
+  m_Center: {x: -0.021333164, y: 0.030475467, z: 0.00094100466}
 --- !u!1 &1220674676
 GameObject:
   m_ObjectHideFlags: 0
@@ -14121,7 +14143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bed: {fileID: 858418620}
   bedCollider: {fileID: 1213738569}
-  moveProvider: {fileID: 962257609}
+  moveProvider: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
